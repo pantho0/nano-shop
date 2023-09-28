@@ -3,6 +3,7 @@ import Home from "../Pages/Home";
 import Mainlayout from "../Layout/Mainlayout";
 import Favorites from "../Pages/Favorites";
 import Cart from "../Pages/Cart";
+import Details from "../Components/Details/Details";
 
 const myRouter = createBrowserRouter([
   {
@@ -21,6 +22,11 @@ const myRouter = createBrowserRouter([
         {
             path: '/cart',
             element: <Cart></Cart>
+        },
+        {
+            path: '/details/:id',
+            element:<Details></Details>,
+            loader:() => fetch('/phones.json')
         }
     ],
   },

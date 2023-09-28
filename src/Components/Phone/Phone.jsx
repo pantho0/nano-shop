@@ -1,7 +1,10 @@
-import React from "react";
+
+import { Link } from "react-router-dom";
 
 const Phone = ({ phone }) => {
-  const { brand_name, image, phone_name, rating } = phone;
+  const {id, brand_name, image, phone_name, rating } = phone;
+  
+
   return (
     <div >
       <div className="card bg-violet-100 shadow-xl">
@@ -14,8 +17,10 @@ const Phone = ({ phone }) => {
         <div className="card-body">
           <h2 className="card-title">{brand_name}</h2>
           <p>{phone_name}</p>
-          <div className="card-actions justify-end">
-            <button className="btn btn-primary">Buy Now</button>
+          <div className="card-actions justify-center ">
+            <Link to={`/details/${id}`}>
+            <button className="btn btn-primary">See Details</button>
+            </Link>
           </div>
         </div>
       </div>
